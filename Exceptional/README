@@ -1,1 +1,14 @@
 This material relates to exceptional groups of order p^6.
+
+The associated preprint is:
+Exceptional groups of order $p^6$ for prime $p \geq 5$
+E.A. O'Brien, Sunil Kumar Prajapati, and Ayush Udeep. 
+
+To check outcome for individual isoclinism family, load  file Table3Phi* into magma.
+The file lists the presentations for the exceptional groups from that family and
+verifies that they are exceptional for a range of primes. 
+
+Here's one example; first read in Saunders-middeg.m which defines the function Mu(G).
+
+% magma Saunders-mindeg.m
+load "Table3Phi29.m";
