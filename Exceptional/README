@@ -12,3 +12,8 @@ Here's one example; first read in Saunders-middeg.m which defines the function M
 
 % magma Saunders-mindeg.m
 load "Table3Phi29.m";
+
+The file 2-3.log records SmallGroup identifers for the exceptional groups of order
+dividing 2^6 and 3^6.
+
+Prepared October 2024 
