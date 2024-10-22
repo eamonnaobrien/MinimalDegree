@@ -1,0 +1,70 @@
+> 
+> // determine the exceptional 2- and 3-groups of order dividing p^6 
+> 
+> // for "small" groups Magma can compute Mu directly
+> 
+> MagmaMu := function (G)
+>    phi, P := MinimalDegreePermutationRepresentation (G);
+>    return Degree (P);
+> end function;
+> 
+> // G has minimal degree mu; brute-force check whether G is exceptional
+> 
+> IsExceptional := function (G, mu)
+>    N:=NormalSubgroups (G);
+>    N := [x`subgroup: x in N];
+>    N := [x: x in N | #x gt 1 and #x lt #G];
+>    for i in [1..#N] do 
+>      Q := quo < G | N[i]>;
+>      m := MagmaMu (Q);
+>      if m gt mu then return true, N[i]; end if;
+>    end for;
+>    return false;
+> end function;
+> 
+> for p in [2, 3] do
+>    for n in [5, 6] do
+>       X := SmallGroups (p^n);
+>       I := [i: i in [1..#X] | IsExceptional (X[i], MagmaMu (X[i]))];
+>       "\n\nExceptional groups of order ", p^n;
+>       "The # of exceptional groups of this order is", #I;
+>       "Their SmallGroup identifiers are the following"; 
+>       I;
+>    end for; 
+> end for;
+
+
+Exceptional groups of order  32
+The # of exceptional groups of this order is 2
+Their SmallGroup identifiers are the following
+[ 10, 14 ]
+
+
+Exceptional groups of order  64
+The # of exceptional groups of this order is 32
+Their SmallGroup identifiers are the following
+[ 24, 39, 47, 69, 70, 77, 96, 98, 107, 109, 115, 116, 117, 118, 119, 121, 129, 
+130, 142, 144, 146, 147, 149, 158, 165, 168, 181, 201, 218, 228, 229, 230 ]
+
+
+Exceptional groups of order  243
+The # of exceptional groups of this order is 10
+Their SmallGroup identifiers are the following
+[ 3, 4, 7, 17, 18, 35, 36, 39, 41, 43 ]
+
+
+Exceptional groups of order  729
+The # of exceptional groups of this order is 67
+Their SmallGroup identifiers are the following
+[ 7, 8, 9, 10, 11, 12, 13, 14, 15, 26, 56, 57, 76, 80, 105, 106, 108, 110, 115, 
+116, 117, 118, 119, 120, 121, 123, 125, 126, 127, 132, 133, 134, 135, 138, 139, 
+142, 149, 150, 167, 168, 255, 256, 274, 275, 276, 286, 287, 288, 289, 302, 303, 
+339, 341, 344, 354, 358, 388, 397, 410, 419, 420, 427, 430, 433, 453, 455, 458 ]
+>       I;
+[ 7, 8, 9, 10, 11, 12, 13, 14, 15, 26, 56, 57, 76, 80, 105, 106, 108, 110, 115, 
+116, 117, 118, 119, 120, 121, 123, 125, 126, 127, 132, 133, 134, 135, 138, 139, 
+142, 149, 150, 167, 168, 255, 256, 274, 275, 276, 286, 287, 288, 289, 302, 303, 
+339, 341, 344, 354, 358, 388, 397, 410, 419, 420, 427, 430, 433, 453, 455, 458 ]
+> quit;
+
+Total time: 645.970 seconds, Total memory usage: 880.22MB
