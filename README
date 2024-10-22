@@ -26,4 +26,7 @@ Here's an example of the use of the code.
 // the groups of order p^6 in Phi3 listed in Table 1 are setup 
 // and their minimal degree permutation representations are constructed. 
 
+* The file 2-3.log reports the determination of the exceptional 2- and 3-groups 
+of order p^6.  It also lists the SmallGroup library identifiers for each of these groups. 
+
 Prepared October 2023 
