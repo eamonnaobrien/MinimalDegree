@@ -1,8 +1,12 @@
-This repository contains data and code related to the preprint:
+Material related to exceptional groups of order p^6 
+can be found in Exceptional folder.
 
+----------------------------------------------------------------------
+This repository contains data and code related to the following paper:
 E.A. O'Brien, Sunil Kumar Prajapati, and Ayush Udeep.
 Minimal degrees for faithful permutation representations 
 of groups of order $p^6$ where $p$ is an odd prime.
+J. Algebraic Combin. 60, 319--388, 2024
 
 It is designed for use with Magma.
 
